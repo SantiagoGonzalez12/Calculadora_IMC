@@ -36,6 +36,7 @@ public class IMCView extends javax.swing.JFrame {
         lblAltura = new javax.swing.JLabel();
         txtAltura = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
+        lblIconoMusculo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,14 +101,13 @@ public class IMCView extends javax.swing.JFrame {
         btnCalcular.setText("jButton1");
         btnCalcular.setActionCommand("Calcular");
 
+        lblIconoMusculo.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        lblIconoMusculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Calculadora_IMC/imc/view/img/fuerza.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
-                .addComponent(lblTitulo)
-                .addGap(90, 90, 90))
             .addGroup(layout.createSequentialGroup()
                 .addGap(161, 161, 161)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -116,6 +116,15 @@ public class IMCView extends javax.swing.JFrame {
                         .addComponent(pnlPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(pnlAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblTitulo)
+                        .addGap(90, 90, 90))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblIconoMusculo)
+                        .addGap(111, 111, 111))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,7 +137,9 @@ public class IMCView extends javax.swing.JFrame {
                 .addComponent(pnlAltura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(44, 44, 44)
                 .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
+                .addGap(27, 27, 27)
+                .addComponent(lblIconoMusculo)
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -170,6 +181,7 @@ public class IMCView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCalcular;
     private javax.swing.JLabel lblAltura;
+    private javax.swing.JLabel lblIconoMusculo;
     private javax.swing.JLabel lblPeso;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JPanel pnlAltura;
