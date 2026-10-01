@@ -6,7 +6,7 @@ package com.Calculadora_IMC.imc.view;
 
 /**
  *
- * @author DAM2
+ * @author Santiago González
  */
 public class CalculadoraView extends javax.swing.JFrame {
     
