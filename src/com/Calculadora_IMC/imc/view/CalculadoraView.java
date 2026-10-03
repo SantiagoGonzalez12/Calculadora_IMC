@@ -60,8 +60,11 @@ public class CalculadoraView extends javax.swing.JFrame {
         lblAltura = new javax.swing.JLabel();
         txtAltura = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
-        lblResultado = new javax.swing.JLabel();
-        lblClasificacion = new javax.swing.JLabel();
+        lblTextoIMC = new javax.swing.JLabel();
+        lblValorIMC = new javax.swing.JLabel();
+        lblTextoClasificacion = new javax.swing.JLabel();
+        lblValorClasificacion = new javax.swing.JLabel();
+        lblError = new javax.swing.JLabel();
         lblIconoMusculo = new javax.swing.JLabel();
         lblIconoGrasaCorporal = new javax.swing.JLabel();
 
@@ -71,8 +74,10 @@ public class CalculadoraView extends javax.swing.JFrame {
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("CALCULADORA DE IMC");
 
-        lblPeso.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblPeso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblPeso.setText("Peso (kg):");
+
+        txtPeso.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout pnlPesoLayout = new javax.swing.GroupLayout(pnlPeso);
         pnlPeso.setLayout(pnlPesoLayout);
@@ -88,17 +93,17 @@ public class CalculadoraView extends javax.swing.JFrame {
         pnlPesoLayout.setVerticalGroup(
             pnlPesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPesoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlPesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlPesoLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(txtPeso))
+                .addGap(8, 8, 8)
+                .addGroup(pnlPesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPeso)
                     .addComponent(lblPeso))
                 .addContainerGap())
         );
 
-        lblAltura.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblAltura.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblAltura.setText("Altura (m):");
+
+        txtAltura.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout pnlAlturaLayout = new javax.swing.GroupLayout(pnlAltura);
         pnlAltura.setLayout(pnlAlturaLayout);
@@ -121,7 +126,24 @@ public class CalculadoraView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        btnCalcular.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnCalcular.setText("Calcular");
+
+        lblTextoIMC.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblTextoIMC.setText("Tu IMC es: ");
+
+        lblValorIMC.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblValorIMC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblTextoClasificacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblTextoClasificacion.setText("Clasificación: ");
+
+        lblValorClasificacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lblValorClasificacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        lblError.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblError.setForeground(new java.awt.Color(255, 0, 0));
+        lblError.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         lblIconoMusculo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblIconoMusculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Calculadora_IMC/imc/view/img/fuerza.png"))); // NOI18N
@@ -136,27 +158,36 @@ public class CalculadoraView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(lblTitulo))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lblIconoGrasaCorporal, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(63, 63, 63)
-                                .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(61, 61, 61)
+                                .addComponent(lblTextoClasificacion)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblValorClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblIconoMusculo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pnlAltura, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(pnlPeso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(63, 63, 63)
-                        .addComponent(lblIconoMusculo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(lblTitulo)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                .addComponent(lblTextoIMC)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblValorIMC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGap(144, 144, 144))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(pnlAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(pnlPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblError, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(103, 103, 103)))))))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,17 +202,26 @@ public class CalculadoraView extends javax.swing.JFrame {
                         .addComponent(pnlAltura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblTextoIMC, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblValorIMC, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(89, 89, 89))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblIconoMusculo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(48, 48, 48))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblIconoGrasaCorporal, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblIconoMusculo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addGap(35, 35, 35)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(lblTextoClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblValorClasificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblError, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18))
+                            .addComponent(lblIconoGrasaCorporal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
 
         pack();
@@ -215,12 +255,15 @@ public class CalculadoraView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCalcular;
     private javax.swing.JLabel lblAltura;
-    public javax.swing.JLabel lblClasificacion;
+    public javax.swing.JLabel lblError;
     private javax.swing.JLabel lblIconoGrasaCorporal;
     private javax.swing.JLabel lblIconoMusculo;
     private javax.swing.JLabel lblPeso;
-    public javax.swing.JLabel lblResultado;
+    private javax.swing.JLabel lblTextoClasificacion;
+    private javax.swing.JLabel lblTextoIMC;
     private javax.swing.JLabel lblTitulo;
+    public javax.swing.JLabel lblValorClasificacion;
+    public javax.swing.JLabel lblValorIMC;
     private javax.swing.JPanel pnlAltura;
     private javax.swing.JPanel pnlPeso;
     public javax.swing.JTextField txtAltura;
