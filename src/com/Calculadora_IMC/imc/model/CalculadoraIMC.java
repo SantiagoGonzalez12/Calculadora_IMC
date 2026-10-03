@@ -10,14 +10,8 @@ public class CalculadoraIMC {
     }
     
     public String clasificar(double imc) {
-        if (imc < 18.5) {
-            return "Bajo Peso";
-        } else if (imc >= 18.5 && imc <= 24.9) {
-            return "Peso Normal";
-        } else if (imc >= 25.0 && imc <= 29.9) {
-            return "Sobrepeso";
-        } else {
-            return "Obesidad";
-        }
+        return imc < 18.5 ? "Bajo Peso" :
+               imc <= 24.9 ? "Peso Normal" :
+               imc <= 29.9 ? "Sobrepeso" : "Obesidad";
     }
 }

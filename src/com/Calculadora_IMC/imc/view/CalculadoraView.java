@@ -60,10 +60,10 @@ public class CalculadoraView extends javax.swing.JFrame {
         lblAltura = new javax.swing.JLabel();
         txtAltura = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
-        lblIconoMusculo = new javax.swing.JLabel();
-        lblIconoGrasaCorporal = new javax.swing.JLabel();
         lblResultado = new javax.swing.JLabel();
         lblClasificacion = new javax.swing.JLabel();
+        lblIconoMusculo = new javax.swing.JLabel();
+        lblIconoGrasaCorporal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,8 +73,6 @@ public class CalculadoraView extends javax.swing.JFrame {
 
         lblPeso.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblPeso.setText("Peso (kg):");
-
-        txtPeso.addActionListener(this::txtPesoActionPerformed);
 
         javax.swing.GroupLayout pnlPesoLayout = new javax.swing.GroupLayout(pnlPeso);
         pnlPeso.setLayout(pnlPesoLayout);
@@ -102,8 +100,6 @@ public class CalculadoraView extends javax.swing.JFrame {
         lblAltura.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblAltura.setText("Altura (m):");
 
-        txtAltura.addActionListener(this::txtAlturaActionPerformed);
-
         javax.swing.GroupLayout pnlAlturaLayout = new javax.swing.GroupLayout(pnlAltura);
         pnlAltura.setLayout(pnlAlturaLayout);
         pnlAlturaLayout.setHorizontalGroup(
@@ -126,8 +122,6 @@ public class CalculadoraView extends javax.swing.JFrame {
         );
 
         btnCalcular.setText("Calcular");
-        btnCalcular.setActionCommand("Calcular");
-        btnCalcular.addActionListener(this::btnCalcularActionPerformed);
 
         lblIconoMusculo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblIconoMusculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Calculadora_IMC/imc/view/img/fuerza.png"))); // NOI18N
@@ -192,18 +186,6 @@ public class CalculadoraView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtPesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPesoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPesoActionPerformed
-
-    private void txtAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlturaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAlturaActionPerformed
-
-    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
