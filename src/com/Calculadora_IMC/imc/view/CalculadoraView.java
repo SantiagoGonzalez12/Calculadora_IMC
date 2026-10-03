@@ -66,12 +66,15 @@ public class CalculadoraView extends javax.swing.JFrame {
         lblIconoGrasaCorporal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setMinimumSize(new java.awt.Dimension(500, 400));
+        setPreferredSize(new java.awt.Dimension(500, 400));
+        getContentPane().setLayout(null);
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("CALCULADORA DE IMC");
-        getContentPane().add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 18, -1, -1));
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(40, 20, 410, 48);
 
         lblPeso.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblPeso.setText("Peso (kg):");
@@ -85,9 +88,9 @@ public class CalculadoraView extends javax.swing.JFrame {
             .addGroup(pnlPesoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblPeso)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         pnlPesoLayout.setVerticalGroup(
             pnlPesoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +102,8 @@ public class CalculadoraView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(pnlPeso, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 240, -1));
+        getContentPane().add(pnlPeso);
+        pnlPeso.setBounds(120, 100, 253, 45);
 
         lblAltura.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblAltura.setText("Altura (m):");
@@ -127,27 +131,33 @@ public class CalculadoraView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(pnlAltura, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
+        getContentPane().add(pnlAltura);
+        pnlAltura.setBounds(120, 160, 242, 43);
 
         btnCalcular.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnCalcular.setText("Calcular");
-        getContentPane().add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 225, 150, 43));
+        getContentPane().add(btnCalcular);
+        btnCalcular.setBounds(174, 225, 150, 43);
 
         lblResultado.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(lblResultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 230, 31));
+        getContentPane().add(lblResultado);
+        lblResultado.setBounds(130, 280, 230, 31);
 
         lblClasificacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblClasificacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        getContentPane().add(lblClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 230, 30));
+        getContentPane().add(lblClasificacion);
+        lblClasificacion.setBounds(130, 320, 230, 30);
 
         lblIconoMusculo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblIconoMusculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Calculadora_IMC/imc/view/img/fuerza.png"))); // NOI18N
-        getContentPane().add(lblIconoMusculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 290, 80, 80));
+        getContentPane().add(lblIconoMusculo);
+        lblIconoMusculo.setBounds(400, 260, 80, 80);
 
         lblIconoGrasaCorporal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblIconoGrasaCorporal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/Calculadora_IMC/imc/view/img/grasa-corporal.png"))); // NOI18N
-        getContentPane().add(lblIconoGrasaCorporal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 100, 100));
+        getContentPane().add(lblIconoGrasaCorporal);
+        lblIconoGrasaCorporal.setBounds(-10, 260, 100, 100);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
