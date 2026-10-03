@@ -11,11 +11,10 @@ import java.awt.event.ActionListener;
  * @author Santiago González
  */
 public class IMCController implements ActionListener {
-    private final CalculadoraIMC modelo;
+    private final CalculadoraIMC calculadora = new CalculadoraIMC();
     private final CalculadoraView vista;
 
-    public IMCController(CalculadoraIMC modelo, CalculadoraView vista) {
-        this.modelo = modelo;
+    public IMCController(CalculadoraView vista) {
         this.vista = vista;
         this.vista.btnCalcular.addActionListener(this);
     }
@@ -29,41 +28,34 @@ public class IMCController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnCalcular) {
             
-            String textoPeso = vista.txtPeso.getText().trim();
-            String textoAltura = vista.txtAltura.getText().trim();
-            
-            if (textoPeso.isEmpty() || textoAltura.isEmpty()) {
-                vista.lblValorIMC.setText("");
-                vista.lblValorClasificacion.setText("");
-                vista.lblError.setText("Error: Tienes que rellenar todos los campos");
-                return; 
-            }
+            String textoPeso = vista.txtPeso.getText();
+            String textoAltura = vista.txtAltura.getText();
 
             try {
                 double peso = Double.parseDouble(textoPeso.replace(",", "."));
                 double altura = Double.parseDouble(textoAltura.replace(",", "."));
 
-                double imc = modelo.calcular(peso, altura);
-                String clasificacion = modelo.clasificar(imc);
+                double imc = calculadora.calcular(peso, altura);
+                String clasificacion = calculadora.clasificar(imc);
 
-                vista.lblError.setText("");
-                vista.lblValorIMC.setText(String.format("%.2f", imc));
-                vista.lblValorClasificacion.setText(clasificacion);
+                vista.lblResultado.setText(String.format("Tu IMC es: %.2f", imc));
+                vista.lblClasificacion.setText("Clasificación: " + clasificacion);
 
-                Color color = new Color(0,204,51);
+                Color color = new Color(0, 153, 0);
                 if (clasificacion.equals("Bajo Peso") || clasificacion.equals("Sobrepeso")) {
                     color = Color.ORANGE;
                 } else if (clasificacion.equals("Obesidad")) {
                     color = Color.RED;
                 }
                 
-                vista.lblValorClasificacion.setForeground(color);
-                vista.lblValorIMC.setForeground(color);
+                vista.lblClasificacion.setForeground(color);
+                vista.lblResultado.setForeground(color);
 
             } catch (NumberFormatException ex) {
-                vista.lblValorIMC.setText("");
-                vista.lblValorClasificacion.setText("");
-                vista.lblError.setText("Error: Introduce solo números válidos");
+                vista.lblResultado.setText("");
+                vista.lblClasificacion.setForeground(Color.RED);
+                vista.lblClasificacion.setText("Error: Datos inválidos");
+                return; 
             }
         }
     }

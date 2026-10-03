@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package com.Calculadora_IMC.imc.main;
 
 import com.Calculadora_IMC.imc.controller.IMCController;
@@ -19,12 +15,12 @@ public class Main {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception ex) {
+            
         }
 
         SwingUtilities.invokeLater(() -> {
-            CalculadoraIMC modelo = new CalculadoraIMC();
             CalculadoraView vista = new CalculadoraView();
-            IMCController controlador = new IMCController(modelo, vista);
+            IMCController controlador = new IMCController(vista);
             
             controlador.iniciar();
         });
