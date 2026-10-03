@@ -28,9 +28,20 @@ public class IMCController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnCalcular) {
+            
+            String textoPeso = vista.txtPeso.getText().trim();
+            String textoAltura = vista.txtAltura.getText().trim();
+            
+            if (textoPeso.isEmpty() || textoAltura.isEmpty()) {
+                vista.lblValorIMC.setText("");
+                vista.lblValorClasificacion.setText("");
+                vista.lblError.setText("Error: Tienes que rellenar todos los campos");
+                return; 
+            }
+
             try {
-                double peso = Double.parseDouble(vista.txtPeso.getText().replace(",", "."));
-                double altura = Double.parseDouble(vista.txtAltura.getText().replace(",", "."));
+                double peso = Double.parseDouble(textoPeso.replace(",", "."));
+                double altura = Double.parseDouble(textoAltura.replace(",", "."));
 
                 double imc = modelo.calcular(peso, altura);
                 String clasificacion = modelo.clasificar(imc);
@@ -39,7 +50,7 @@ public class IMCController implements ActionListener {
                 vista.lblValorIMC.setText(String.format("%.2f", imc));
                 vista.lblValorClasificacion.setText(clasificacion);
 
-                Color color = Color.GREEN;
+                Color color = new Color(0,204,51);
                 if (clasificacion.equals("Bajo Peso") || clasificacion.equals("Sobrepeso")) {
                     color = Color.ORANGE;
                 } else if (clasificacion.equals("Obesidad")) {

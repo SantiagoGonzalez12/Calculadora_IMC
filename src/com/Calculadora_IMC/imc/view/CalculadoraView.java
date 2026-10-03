@@ -133,13 +133,13 @@ public class CalculadoraView extends javax.swing.JFrame {
         lblTextoIMC.setText("Tu IMC es: ");
 
         lblValorIMC.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblValorIMC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblValorIMC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         lblTextoClasificacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTextoClasificacion.setText("Clasificación: ");
 
         lblValorClasificacion.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblValorClasificacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblValorClasificacion.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         lblError.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblError.setForeground(new java.awt.Color(255, 0, 0));
