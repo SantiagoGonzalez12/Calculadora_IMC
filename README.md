@@ -2,8 +2,6 @@
 
 Aplicación de escritorio en Java desarrollada con Swing y el diseñador gráfico Matisse en NetBeans IDE, adhiriéndose estrictamente al patrón de arquitectura **Modelo-Vista-Controlador (MVC)**.
 
----
-
 ## Características
 
 - **Cálculo preciso:** Determina el valor numérico del IMC a partir del peso (kg) y la altura (m) introducidos.
@@ -12,8 +10,6 @@ Aplicación de escritorio en Java desarrollada con Swing y el diseñador gráfic
 - **Soporte de formato regional:** Acepta automáticamente comas (`,`) y puntos (`.`) como separadores decimales.
 - **Feedback visual dinámico:** Cambio automático de color del texto de los resultados (Verde, Naranja y Rojo) según la categoría de salud.
 - **Compatibilidad ejecutable:** Compilado con target Java 8 (JDK 8+) para garantizar su ejecución en cualquier equipo sin conflictos de versión.
-
----
 
 ## Estructura del Proyecto (MVC)
 
@@ -25,13 +21,13 @@ src/
     └── Calculadora_IMC/
         └── imc/
             ├── model/
-            │   └── CalculadoraIMC.java   # Lógica de cálculo y clasificación
+            │   └── CalculadoraIMC.java
             ├── view/
-            │   └── CalculadoraView.java  # Interfaz gráfica (Swing / Matisse)
+            │   └── CalculadoraView.java
             ├── controller/
-            │   └── IMCController.java    # Gestión de eventos y lógica del controlador
+            │   └── IMCController.java
             └── main/
-                └── Main.java             # Punto de entrada de la aplicación
+                └── Main.java
 ```
 
 ## Requisitos e Instalación
@@ -46,7 +42,7 @@ src/
 1. **Clona el repositorio en tu equipo:**
 
     ```bash
-    git clone [https://github.com/SantiagoGonzalez12/Calculadora_IMC.git](https://github.com/SantiagoGonzalez12/Calculadora_IMC.git)
+    git clone https://github.com/SantiagoGonzalez12/Calculadora_IMC.git
     ```
 
 2. **Abrir el proyecto:**
@@ -63,6 +59,13 @@ Tras realizar el ``Clean and Build``, puedes ejecutar la aplicación sin abrir N
 ```bash
 java -jar dist/Calculadora_IMC.jar
 ```
+
+## Iconos
+
+Los iconos han sido obtenidos de estas páginas: 
+
+- Grasa corporal: https://www.flaticon.es/icono-gratis/grasa-corporal_5862623
+- Fuerza: https://www.flaticon.es/icono-gratis/fuerza_9571346
 
 ## Autor
 
