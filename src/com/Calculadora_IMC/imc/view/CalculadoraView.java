@@ -21,25 +21,27 @@ public class CalculadoraView extends javax.swing.JFrame {
         // Icono fuerza
         javax.swing.ImageIcon iconoOriginalMusculo = (javax.swing.ImageIcon) lblIconoMusculo.getIcon();
         if (iconoOriginalMusculo != null) {
+            // Escalar la imagen del icono de fuerza para que se ajuste al tamaño del JLabel
             java.awt.Image imagenEscalada = iconoOriginalMusculo.getImage().getScaledInstance(
                 lblIconoMusculo.getWidth(), 
                 lblIconoMusculo.getHeight(), 
                 java.awt.Image.SCALE_SMOOTH
             );
 
-            lblIconoMusculo.setIcon(new javax.swing.ImageIcon(imagenEscalada));
+            lblIconoMusculo.setIcon(new javax.swing.ImageIcon(imagenEscalada)); // Establecer el icono escalado en el JLabel
         }
         
         // Icono grasa-corporal
         javax.swing.ImageIcon iconoOriginalGrasa = (javax.swing.ImageIcon) lblIconoGrasaCorporal.getIcon();
         if (iconoOriginalGrasa != null) {
+            // Escalar la imagen del icono de grasa-corporal para que se ajuste al tamaño del JLabel
             java.awt.Image imagenEscalada = iconoOriginalGrasa.getImage().getScaledInstance(
                 lblIconoGrasaCorporal.getWidth(), 
                 lblIconoGrasaCorporal.getHeight(), 
                 java.awt.Image.SCALE_SMOOTH
             );
 
-            lblIconoGrasaCorporal.setIcon(new javax.swing.ImageIcon(imagenEscalada));
+            lblIconoGrasaCorporal.setIcon(new javax.swing.ImageIcon(imagenEscalada)); // Establecer el icono escalado en el JLabel
         }
     }
 
